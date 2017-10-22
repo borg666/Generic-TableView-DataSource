@@ -1,25 +1,19 @@
-//
-//  ViewController.swift
-//  Generic-TableView-Datasource
-//
-//  Created by Linxmap on 22/10/2017.
-//  Copyright © 2017 linxmap. All rights reserved.
-//
-
 import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var tableView: UITableView!
+     let viewModel: ViewModel = ViewModel()
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        tableView.dataSource = viewModel.dataSource
+        tableView.reloadData()
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
     }
-
 
 }
 
